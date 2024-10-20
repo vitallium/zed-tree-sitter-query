@@ -1,0 +1,11 @@
+id = "tree-sitter-query"
+name = "Tree Sitter query"
+description = "Support for tree-sitter queries"
+version = "0.0.1"
+schema_version = 1
+authors = ["Vitaly Slobodin <vitaliy.slobodin@gmail.com>"]
+repository = "https://github.com/vitallium/zed-tree-sitter-query"
+
+[grammars.query]
+repository = "https://github.com/tree-sitter-grammars/tree-sitter-query"
+commit = "5c2d02747250bc326bc33687b3319b7db8554e24"
