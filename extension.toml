@@ -1,6 +1,6 @@
 id = "tree-sitter-query"
 name = "Tree Sitter query"
-description = "Support for tree-sitter queries"
+description = "Support for tree-sitter query files (*.scm)"
 version = "0.0.1"
 schema_version = 1
 authors = ["Vitaly Slobodin <vitaliy.slobodin@gmail.com>"]
