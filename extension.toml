@@ -8,4 +8,4 @@ repository = "https://github.com/vitallium/zed-tree-sitter-query"
 
 [grammars.query]
 repository = "https://github.com/tree-sitter-grammars/tree-sitter-query"
-commit = "5c2d02747250bc326bc33687b3319b7db8554e24"
+commit = "0555ac0da902abff06076e40501102cee3ba68bd"
