@@ -1,35 +1,19 @@
-; From https://github.com/tree-sitter-grammars/tree-sitter-query/blob/master/queries/query/highlights.scm
+; From https://github.com/helix-editor/helix/blob/master/runtime/queries/tsq/highlights.scm
 
-(string) @string
+((program
+  .
+  (comment)*
+  .
+  (comment) @keyword)
+  (#match? @keyword "^;+ *inherits *:"))
 
-(escape_sequence) @string.escape
+((parameters
+  (identifier) @constant)
+  (#match? @constant "^[-+]?[0-9]+(.[0-9]+)?$"))
 
-(capture
-  (identifier) @type)
+"_" @constant
 
-(anonymous_node
-  (string) @string)
-
-(predicate
-  name: (identifier) @function.call)
-
-(named_node
-  name: (identifier) @variable)
-
-(field_definition
-  name: (identifier) @property)
-
-(negated_field
-  "!" @operator
-  (identifier) @property)
-
-(comment) @comment
-
-(quantifier) @operator
-
-(predicate_type) @punctuation.special
-
-"." @operator
+":" @punctuation.delimiter
 
 [
   "["
@@ -38,52 +22,31 @@
   ")"
 ] @punctuation.bracket
 
-":" @punctuation.delimiter
+"." @operator
 
-[
-  "@"
-  "#"
-] @punctuation.special
+(quantifier) @operator
 
-"_" @constant
+(comment) @comment
 
-((parameters
-  (identifier) @number)
-  (#match? @number "^[-+]?[0-9]+(.[0-9]+)?$"))
+(negated_field
+  "!" @operator
+  (identifier) @variable)
 
-((program
-  .
-  (comment)*
-  .
-  (comment) @keyword.import)
-  (#lua-match? @keyword.import "^;+ *inherits *:"))
+(field_definition
+  name: (identifier) @variable)
 
-((program
-  .
-  (comment)*
-  .
-  (comment) @keyword.directive)
-  (#lua-match? @keyword.directive "^;+ *extends *$"))
+(named_node
+  name: (identifier) @tag)
 
-((comment) @keyword.directive
-  (#lua-match? @keyword.directive "^;+%s*format%-ignore%s*$"))
-
+(predicate name: (identifier) @error)
 ((predicate
-  name: (identifier) @_name
-  parameters:
-    (parameters
-      (string
-        "\"" @string
-        "\"" @string) @string.regexp))
-  (#any-of? @_name "match" "not-match" "vim-match" "not-vim-match" "lua-match" "not-lua-match"))
+   "#" @function.builtin
+   name: (identifier) @function.builtin @_name
+   type: (predicate_type) @function.builtin)
+ (#any-of? @_name "eq" "not-eq" "match" "not-match" "any-of" "not-any-of" "is" "is-not" "not-same-line" "not-kind-eq" "set" "select-adjacent" "strip"))
 
-((predicate
-  name: (identifier) @_name
-  parameters:
-    (parameters
-      (string
-        "\"" @string
-        "\"" @string) @string.regexp
-      .
-      (string) .))
-  (#any-of? @_name "gsub" "not-gsub"))
+(capture) @label
+
+(escape_sequence) @constant
+
+(string) @string
