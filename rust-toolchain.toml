@@ -1,5 +1,0 @@
-[toolchain]
-channel = "1.85"
-profile = "minimal"
-targets = ["wasm32-wasip1"]
-components = [ "rustfmt", "clippy" ]
