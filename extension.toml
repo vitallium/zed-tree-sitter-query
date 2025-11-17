@@ -9,3 +9,7 @@ repository = "https://github.com/vitallium/zed-tree-sitter-query"
 [grammars.query]
 repository = "https://github.com/tree-sitter-grammars/tree-sitter-query"
 commit = "60e253d3c9d6b1131a0f75c85e4bdcc9a48d5b42"
+
+[language_servers.ts-query-ls]
+name = "Tree-sitter Query"
+languages = ["Tree-sitter Query"]
