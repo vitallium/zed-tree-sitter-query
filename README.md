@@ -76,6 +76,23 @@ This configuration:
   Validates capture names against Zed's standard highlight captures - [Check the
   language server documentation for more information on configuration
   options](https://github.com/ribru17/ts_query_ls/blob/master/README.md#configuration).
+- You can check the full example in the [examples](examples/tsqueryrc.json) directory.
+
+#### Zed Highlight Captures Reference
+
+The following captures are officially supported by Zed themes. Additional
+captures follow a fallback system (e.g., `@type.super` falls back to `@type`).
+
+##### Core Captures
+
+- `@attribute`, `@boolean`, `@comment`, `@comment.doc`, `@constant`, `@constructor`
+- `@embedded`, `@emphasis`, `@emphasis.strong`, `@enum`
+- `@function`, `@hint`, `@keyword`, `@label`, `@link_text`, `@link_uri`
+- `@number`, `@operator`, `@predictive`, `@preproc`, `@primary`, `@property`
+- `@punctuation`, `@punctuation.bracket`, `@punctuation.delimiter`, `@punctuation.list_marker`, `@punctuation.special`
+- `@string`, `@string.escape`, `@string.regex`, `@string.special`, `@string.special.symbol`
+- `@tag`, `@tag.doctype`, `@text.literal`, `@title`, `@type`
+- `@variable`, `@variable.special`, `@variant`
 
 ## Acknowledgements
 
