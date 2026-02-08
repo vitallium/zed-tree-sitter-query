@@ -64,6 +64,14 @@ The language server is configured with the following settings via `.tsqueryrc.js
       "variable": "A variable",
       "variable.special": "A special variable",
       "variant": "A variant"
+    },
+    "textobjects": {
+      "function.around": "An entire function definition or equivalent small section of a file.",
+      "function.inside": "The function body (the stuff within the braces).",
+      "class.around": "An entire class definition or equivalent large section of a file.",
+      "class.inside": "The contents of a class definition.",
+      "comment.around": "An entire comment (e.g. all adjacent line comments, or a block comment).",
+      "comment.inside": "The contents of a comment."
     }
   }
 }
@@ -73,7 +81,7 @@ This configuration:
 
 - Looks for Tree-sitter parsers in the `./grammars` directory - Detects language
   contexts from file paths matching the pattern `languages/([^/]+)/[^/]+\.scm` -
-  Validates capture names against Zed's standard highlight captures - [Check the
+  Validates capture names against Zed's standard `highlight` and `textobjects` captures - [Check the
   language server documentation for more information on configuration
   options](https://github.com/ribru17/ts_query_ls/blob/master/README.md#configuration).
 - You can check the full example in the [examples](examples/tsqueryrc.json) directory.
@@ -97,4 +105,4 @@ captures follow a fallback system (e.g., `@type.super` falls back to `@type`).
 ## Acknowledgements
 
 - Based on the [tree-sitter-query](https://github.com/tree-sitter-grammars/tree-sitter-query) grammar
-- Syntax highlighting and injection queries adapted from the official tree-sitter-query repository
+- Syntax highlighting and injection queries adapted from the official `tree-sitter-query` repository
