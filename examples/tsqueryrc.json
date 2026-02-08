@@ -56,6 +56,14 @@
     "runnables": {
       "name": "Captures the test/task name",
       "run": "Captures the runnable identifier"
+    },
+    "textobjects": {
+      "function.around": "An entire function definition or equivalent small section of a file.",
+      "function.inside": "The function body (the stuff within the braces).",
+      "class.around": "An entire class definition or equivalent large section of a file.",
+      "class.inside": "The contents of a class definition.",
+      "comment.around": "An entire comment (e.g. all adjacent line comments, or a block comment).",
+      "comment.inside": "The contents of a comment."
     }
   },
   "valid_predicates": {
