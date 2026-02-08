@@ -54,8 +54,23 @@
       "variant": "A variant"
     },
     "runnables": {
-      "name": "Captures the test/task name",
-      "run": "Captures the runnable identifier"
+      "name": "Captures the test/task name.",
+      "run": "Captures the runnable identifier."
+    },
+    "brackets": {
+      "open": "Captures opening brackets, braces, and quotes.",
+      "close": "Captures closing brackets, braces, and quotes."
+    },
+    "indents": {
+      "end": "Captures closing brackets and braces.",
+      "indent": "Captures entire arrays and objects for indentation."
+    },
+    "outline": {
+      "name": "Captures the content of object keys.",
+      "item": "Captures the entire key-value pair.",
+      "context": "Captures elements that provide context for the outline item.",
+      "context.extra": "Captures additional contextual information for the outline item.",
+      "annotation": "Captures nodes that annotate outline item (doc comments, attributes, decorators)."
     },
     "textobjects": {
       "function.around": "An entire function definition or equivalent small section of a file.",
