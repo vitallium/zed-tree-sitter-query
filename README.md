@@ -14,7 +14,7 @@ provides intelligent features for Tree-sitter query files including:
 
 ### Configuration
 
-The language server is configured with the following settings via `.tsqueryrc.json`:
+The language server is configured with the following settings via `.tsqueryrc.json`, or via Zed's `lsp.ts-query-ls.settings` key:
 
 ```json
 {
