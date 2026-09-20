@@ -143,6 +143,17 @@ impl zed::Extension for TreeSitterQueryExtension {
                 .unwrap_or_default(),
         ))
     }
+
+    fn language_server_workspace_configuration(
+        &mut self,
+        language_server_id: &zed_extension_api::LanguageServerId,
+        worktree: &zed_extension_api::Worktree,
+    ) -> Result<Option<zed_extension_api::serde_json::Value>> {
+        Ok(
+            zed::settings::LspSettings::for_worktree(language_server_id.as_ref(), worktree)?
+                .settings,
+        )
+    }
 }
 
 zed::register_extension!(TreeSitterQueryExtension);
