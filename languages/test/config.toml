@@ -1,0 +1,12 @@
+name = "Tree-sitter Test"
+grammar = "test"
+# NOTE: normally, we would enable this language for matching files, but
+# tree-sitter queries are all .txt, and we can't scope these suffixes to just
+# "**/corpus/**/*.txt" (eg). This can only be changed if/when Zed changes how
+# languages are matched to files, and it means that support for this language is
+# opt-in only at this time. See README for how to enable it.
+# path_suffixes = ["txt"]
+autoclose_before = ")"
+brackets = [
+    { start = "(", end = ")", close = true, newline = false },
+]

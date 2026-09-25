@@ -1,6 +1,8 @@
 # Tree-sitter Query Extension for Zed
 
-This extension adds support for Tree-sitter query files (`.scm`) to the Zed editor.
+This extension adds support for Tree-sitter query files (`.scm`) and test files (`corpus\**\*.txt`) to the Zed editor.
+
+*Note* that tree-sitter test support is opt-in only at this time. To enable support, see [Tree-sitter Tests](#tree-sitter-tests).
 
 ## Using [the `ts_query_ls` language server](https://github.com/ribru17/ts_query_ls)
 
@@ -102,7 +104,31 @@ captures follow a fallback system (e.g., `@type.super` falls back to `@type`).
 - `@tag`, `@tag.doctype`, `@text.literal`, `@title`, `@type`
 - `@variable`, `@variable.special`, `@variant`
 
+## Tree-sitter Tests
+
+### Features
+
+- highlighting test titles, output, and *some* inputs
+- outline and navigation support
+- runnables: run specific tests, or all tests in a file
+
+### Configuration
+
+To enable support for Tree-sitter tests, add the following entry to `file_types`
+in your Zed `settings.json`: `"Tree-sitter Test": ["**/corpus/**/*.txt"]`
+
+In context, it might look like this:
+```json
+// settings.json
+{
+  "file_types": {
+    // Treat .txt files in tree-sitter corpus directories as tests.
+    "Tree-sitter Test": ["**/corpus/**/*.txt"],
+  }
+}
+```
+
 ## Acknowledgements
 
-- Based on the [tree-sitter-query](https://github.com/tree-sitter-grammars/tree-sitter-query) grammar
-- Syntax highlighting and injection queries adapted from the official `tree-sitter-query` repository
+- Based on the [tree-sitter-query](https://github.com/tree-sitter-grammars/tree-sitter-query) and [tree-sitter-test](https://github.com/tree-sitter-grammars/tree-sitter-test) grammars
+- Syntax highlighting and injection queries adapted from the official `tree-sitter-query` and `tree-sitter-test` repositories
