@@ -1,0 +1,25 @@
+[
+  {
+    "label": "tree-sitter test $ZED_FILENAME",
+    "command": "./node_modules/.bin/tree-sitter",
+    "args": [
+      "test",
+      "--file-name",
+      // just file name (aka basename); --file-name does not support paths + filenames
+      "\"$ZED_FILENAME\""
+    ],
+    "tags": ["tree-sitter-test-file"]
+  },
+  {
+    "label": "tree-sitter test $ZED_SYMBOL",
+    "command": "./node_modules/.bin/tree-sitter",
+    "args": [
+      "test",
+      "--include",
+      "\"^$ZED_SYMBOL$\"",
+      "--file-name",
+      "\"$ZED_FILENAME\""
+    ],
+    "tags": ["tree-sitter-test"]
+  }
+]
